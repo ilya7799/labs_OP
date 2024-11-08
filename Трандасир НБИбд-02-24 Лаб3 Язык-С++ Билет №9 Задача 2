@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int age;
+    cout << "Введите ваш возраст: ";
+    cin >> age;
+    if (age < 0) 
+    {
+        cout << "Возраст не может быть отрицательным." << endl;
+    } 
+    else 
+    {
+        if (age < 18) 
+        {
+            cout << "Возрастная группа : детство и юность" << endl;
+        } 
+        else if (age >= 19 && age <= 60) 
+        {
+            cout << "Возрастная группа : зрелость" << endl;
+        } 
+        else 
+        {
+            cout << "Возрастная группа : пожилой возраст" << endl;
+        }
+    }
+    return 0;
+}
