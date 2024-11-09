@@ -1,0 +1,19 @@
+from datetime import datetime, timedelta
+def previous_day(m, n):
+    current_date = datetime(year=2024-2025, month=m, day=n)  
+    previous_date = current_date - timedelta(days=1)
+    return previous_date.day, previous_date.month
+m = int(input("Введите номер месяца : "))
+n = int(input("Введите число : "))
+if m < 1 or m > 12:
+    print("Некорректный номер месяца.")
+elif n < 1 or n > 31:
+    print("Некорректное число.")
+else:
+    if (m == 2 and n > 29) or (m in [4, 6, 9, 11] and n > 30):
+        print("Некорректное число для данного месяца.")
+    elif (m == 2 and n == 29):
+        print("Введите число меньше 29 для февраля, если год не високосный.")
+    else:
+        prev_day, prev_month = previous_day(m, n)
+        print(f"Предыдущий день: {prev_day} {prev_month}") 
