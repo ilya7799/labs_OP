@@ -1,0 +1,15 @@
+def transform_number(num):
+    if 100 <= num <= 999:
+        num_str = str(num)
+        swapped_first_last = num_str[-1] + num_str[1] + num_str[0]
+        four_digit_number = '0' + swapped_first_last
+        transformed_number = four_digit_number[0] + four_digit_number[2] + four_digit_number[1] + four_digit_number[3]
+        return transformed_number
+    else:
+        return 
+try:
+    number = int(input("Введите трехзначное число: "))
+    result = transform_number(number)
+    print(result)
+except ValueError:
+    print() 
