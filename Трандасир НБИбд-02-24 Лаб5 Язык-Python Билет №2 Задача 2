@@ -1,0 +1,10 @@
+number = int(input("Введите число: "))
+def get_divisors(n, current=1, divisors=[]):
+    if current > abs(n):
+        return divisors
+    if n % current == 0:
+        divisors.append(current)
+    return get_divisors(n, current + 1, divisors)
+divisors = get_divisors(number)
+divisors.sort(reverse=True)
+print("Числа", number, "в порядке убывания:", divisors)
