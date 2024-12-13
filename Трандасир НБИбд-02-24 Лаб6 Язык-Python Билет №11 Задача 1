@@ -1,0 +1,9 @@
+numbers = []
+for _ in range(10):
+    num = int(input())
+    if num > 15:
+        num = 15
+    numbers.append(num)
+print("Вывод:")
+for number in numbers:
+    print(number)
