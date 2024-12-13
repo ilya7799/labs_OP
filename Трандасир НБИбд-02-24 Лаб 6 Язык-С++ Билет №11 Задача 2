@@ -1,0 +1,23 @@
+#include <iostream>
+int main() {
+    int targetSum;
+    std::cout << "Введите натуральное число: ";
+    std::cin >> targetSum;
+    if (targetSum < 1 || targetSum > 27) { 
+        std::cout << "Ведите от 1 до 27" << std::endl;
+        return 1;
+    }
+    std::cout << "Вывод (сумма) натуральных чисел:" << targetSum << ":\n";
+    for (int i = 100; i <= 999; ++i) {
+        int sum = 0;
+        int temp = i;
+        while (temp > 0) {
+            sum += temp % 10; 
+            temp /= 10;       
+        }
+        if (sum == targetSum) {
+            std::cout << i << std::endl;
+        }
+    }
+    return 0;
+} 
