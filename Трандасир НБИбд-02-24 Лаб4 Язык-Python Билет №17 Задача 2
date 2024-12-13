@@ -1,0 +1,21 @@
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+def simplify_fraction(m, n):
+    if n == 0:
+        raise ValueError("Знаменатель не может быть равен нулю.")
+    common_divisor = gcd(m, n)
+    simplified_numerator = m // common_divisor
+    simplified_denominator = n // common_divisor
+    return simplified_numerator, simplified_denominator
+try:
+    m = int(input("n: "))
+    n = int(input("m: "))
+    if m <= 0 or n <= 0:
+        print("Оба числа должны быть натуральными.")
+    else:
+        simplified = simplify_fraction(m, n)
+        print(f"Сокращенная дробь: {simplified[0]}/{simplified[1]}")
+except ValueError:
+    print()
