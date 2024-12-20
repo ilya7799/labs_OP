@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+int main() {
+    int N;
+    std::cout << "Введите размер массива: ";
+    std::cin >> N;
+    if (N <= 0) {
+        std::cerr << "Размер массива недолжен быть отрицательным." << std::endl;
+        return 1;
+    }
+    std::vector<int> A(N);
+    std::cout << "Введите элементы массива: ";
+    for (int& element : A) {
+        std::cin >> element;
+    }
+    std::cout << "Элементы с нечетными индексами: ";
+    for (int i = 2; i <= N; i += 2) {
+        std::cout << A[i - 1] << " "; 
+    }
+    std::cout << "\nЭлементы с четными индексами: ";
+    for (int i = 1; i <= N; i += 2) {
+        std::cout << A[i - 1] << " "; 
+    }
+    std::cout << std::endl; 
+    return 0;
+}
