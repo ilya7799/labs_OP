@@ -1,0 +1,27 @@
+def product_of_even_elements(matrix):
+    if not matrix or not matrix[0]:
+        return []
+    M = len(matrix)
+    N = len(matrix[0])
+    products = [1] * N  
+    has_even = [False] * N  
+
+    for i in range(M):
+        for j in range(N):
+            if matrix[i][j] % 2 == 0: 
+                products[j] *= matrix[i][j]
+                has_even[j] = True
+    for j in range(N):
+        if not has_even[j]:
+            products[j] = 0
+    return products
+if __name__ == "__main__":
+    M = int(input("Введите количество строк (M): "))
+    N = int(input("Введите количество столбцов (N): "))
+    matrix = []
+    print("Введите элементы матрицы:")
+    for i in range(M):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    result = product_of_even_elements(matrix)
+    print("Произведения чисел в каждом столбце:", result)
