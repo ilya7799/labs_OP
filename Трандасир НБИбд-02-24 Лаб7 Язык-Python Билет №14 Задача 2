@@ -1,0 +1,6 @@
+def sum_even_indexed_elements(arr):
+    return sum(arr[i] for i in range(0, len(arr), 2))
+n = int(input("Введите n элементов в массиве: "))
+arr = list(map(int, input(f"Введите {n} элементов через пробел: ").split()))
+result = sum_even_indexed_elements(arr)
+print("Сумма элементов на четных местах:", result)
